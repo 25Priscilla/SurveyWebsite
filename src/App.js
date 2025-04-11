@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -35,7 +35,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <BrowserRouter basename="/SurveyWebsite">
       <Header />
       <main style={{ minHeight: "80vh", padding: "20px" }}>
         <Routes>
@@ -47,7 +47,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 
