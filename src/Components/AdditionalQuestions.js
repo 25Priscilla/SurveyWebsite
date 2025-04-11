@@ -1,5 +1,3 @@
-// AdditionalQuestions.js
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,13 +22,13 @@ export default function AdditionalQuestions({ addQuestionData }) {
     } else {
       // If the selected option is "Others", use the value from the corresponding text input
       if (profession === "Others") {
-        profession = otherProfession;
+        setProfession(otherProfession); // Use state setter instead of direct reassignment
       }
       if (interest === "Others") {
-        interest = otherInterest;
+        setInterest(otherInterest); // Use state setter instead of direct reassignment
       }
       if (reference === "Others") {
-        reference = otherReference;
+        setReference(otherReference); // Use state setter instead of direct reassignment
       }
 
       // Log the selected options and call the addQuestionData function with the data
