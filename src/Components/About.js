@@ -1,12 +1,21 @@
-// About.js
+import React from 'react';
 
-import React from 'react'
-
-export const About = () => {
+export function About() {
   return (
-    <div className='text-center qform'>
-        <h3>This is About Section</h3>
-        <p>This is a survey website using ReactJS</p>
+    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+      <h2>About This Survey</h2>
+      <p>
+        This survey website is designed to collect feedback and insights from users
+        in a simple and user-friendly way.
+      </p>
+      <p>
+        Your responses help us understand preferences, improve our services,
+        and create better experiences for everyone.
+      </p>
+      <p>
+        We value your privacy and ensure your data is stored securely.
+        Thank you for participating!
+      </p>
     </div>
-  )
+  );
 }

@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -6,9 +7,9 @@ const Header = () => {
       <h1>My Website</h1>
       <nav>
         <ul style={styles.navList}>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact</Link></li> {/* Ensure this links to the contact page */}
         </ul>
       </nav>
     </header>
@@ -17,18 +18,18 @@ const Header = () => {
 
 const styles = {
   header: {
-    background: "#333",
-    color: "#fff",
-    padding: "15px",
-    textAlign: "center"
+    background: '#333',
+    color: '#fff',
+    padding: '15px',
+    textAlign: 'center',
   },
   navList: {
-    listStyle: "none",
-    display: "flex",
-    justifyContent: "center",
-    gap: "15px",
-    padding: 0
-  }
+    listStyle: 'none',
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '15px',
+    padding: 0,
+  },
 };
 
 export default Header;

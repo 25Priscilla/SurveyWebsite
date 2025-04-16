@@ -1,14 +1,15 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import HomePage from './Components/HomePage';
 import BasicInfo from './Components/BasicInfo';
 import AdditionalQuestions from './Components/AdditionalQuestions';
 import EnteredDetails from './Components/EnteredDetails';
 import ThankYouPage from './Components/ThankYouPage';
 import { About } from './Components/About';
+import Contact from './Components/Contact';  // Import Contact component
 
 function App() {
   // Initialize state from localStorage or use empty objects
@@ -17,11 +18,15 @@ function App() {
 
   // Update localStorage when state changes
   useEffect(() => {
-    localStorage.setItem('data', JSON.stringify(basicData));
+    if (basicData) {
+      localStorage.setItem('data', JSON.stringify(basicData));
+    }
   }, [basicData]);
 
   useEffect(() => {
-    localStorage.setItem('questiondata', JSON.stringify(questionData));
+    if (questionData) {
+      localStorage.setItem('questiondata', JSON.stringify(questionData));
+    }
   }, [questionData]);
 
   // Function to update basicData
@@ -39,11 +44,13 @@ function App() {
       <Header />
       <main style={{ minHeight: "80vh", padding: "20px" }}>
         <Routes>
-          <Route path='/' element={<BasicInfo addBasicData={addBasicData} />} />
-          <Route path='/questions' element={<AdditionalQuestions addQuestionData={addQuestionData} />} />
-          <Route path='/details' element={<EnteredDetails data={basicData} questionData={questionData} />} />
-          <Route path='/thanks' element={<ThankYouPage />} />
-          <Route path='/about' element={<About />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/survey" element={<BasicInfo addBasicData={addBasicData} />} />
+          <Route path="/questions" element={<AdditionalQuestions addQuestionData={addQuestionData} />} />
+          <Route path="/details" element={<EnteredDetails data={basicData} questionData={questionData} />} />
+          <Route path="/thanks" element={<ThankYouPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} /> {/* Add Contact route */}
         </Routes>
       </main>
       <Footer />
