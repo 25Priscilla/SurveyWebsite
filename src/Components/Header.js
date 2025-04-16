@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header style={styles.header}>
-      <h1>My Website</h1>
+      <h1>My Survey Website</h1>
       <nav>
         <ul style={styles.navList}>
           <li><Link to="/">Home</Link></li>
