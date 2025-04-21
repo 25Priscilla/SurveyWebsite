@@ -20,7 +20,7 @@ const EnteredDetails = ({ data, questionData }) => {
       <h2>Entered Details</h2>
       <p><strong>Name:</strong> {data.name}</p>
       <p><strong>Email:</strong> {data.email}</p>
-      <p><strong>Phone:</strong> {data.contact}</p>
+      <p><strong>Phone:</strong> {data.phone}</p>
       <h3>Survey Questions</h3>
       <p><strong>Profession:</strong> {questionData.profession}</p>
       <p><strong>Interest:</strong> {questionData.interest}</p>
